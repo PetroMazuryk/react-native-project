@@ -12,6 +12,7 @@ import {
   Text,
   ImageBackground,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
 
 const RegistrationScreen = () => {
@@ -57,9 +58,13 @@ const RegistrationScreen = () => {
               />
               <View style={styles.buttonWrapper}>
                 <TouchableOpacity style={styles.button}>
-                  <Text style={styles.textButton}>Зареєструватися</Text>
+                  <Text style={styles.register}>Зареєструватися</Text>
                 </TouchableOpacity>
-                <Text style={styles.already}>Вже є аккаунт ? Увійти</Text>
+                <Pressable>
+                  <Text style={styles.registerAlready}>
+                    Вже є аккаунт ? Увійти
+                  </Text>
+                </Pressable>
               </View>
             </KeyboardAvoidingView>
           </View>
@@ -116,10 +121,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#FF6C00",
     marginTop: 13,
   },
-  textButton: {
+  register: {
     color: "white",
   },
-  already: {
+  registerAlready: {
     fontSize: 16,
     lineHeight: 18,
     color: "#1B4371",
